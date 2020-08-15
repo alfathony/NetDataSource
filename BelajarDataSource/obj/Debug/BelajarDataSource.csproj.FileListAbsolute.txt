@@ -10,3 +10,5 @@ E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.csproj.Ge
 E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.csproj.CoreCompileInputs.cache
 E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.exe
 E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.pdb
+E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.MenuForm.resources
+E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.UserForm.resources
