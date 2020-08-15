@@ -1,0 +1,12 @@
+E:\Net\BelajarDataSource\BelajarDataSource\bin\Debug\DatabaseLatihan.mdf
+E:\Net\BelajarDataSource\BelajarDataSource\bin\Debug\DatabaseLatihan_log.ldf
+E:\Net\BelajarDataSource\BelajarDataSource\bin\Debug\BelajarDataSource.exe.config
+E:\Net\BelajarDataSource\BelajarDataSource\bin\Debug\BelajarDataSource.exe
+E:\Net\BelajarDataSource\BelajarDataSource\bin\Debug\BelajarDataSource.pdb
+E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.csprojAssemblyReference.cache
+E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.Form1.resources
+E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.Properties.Resources.resources
+E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.csproj.GenerateResource.cache
+E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.csproj.CoreCompileInputs.cache
+E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.exe
+E:\Net\BelajarDataSource\BelajarDataSource\obj\Debug\BelajarDataSource.pdb
