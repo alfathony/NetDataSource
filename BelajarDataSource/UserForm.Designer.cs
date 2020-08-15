@@ -33,18 +33,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.tbUsername = new System.Windows.Forms.TextBox();
+            this.bdSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new BelajarDataSource.DataSet1();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbVerifyPassword = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
-            this.bdSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsUser = new BelajarDataSource.dsUser();
-            this.dataSet1 = new BelajarDataSource.DataSet1();
             this.usersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usersTableAdapter = new BelajarDataSource.DataSet1TableAdapters.usersTableAdapter();
+            this.buttonDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bdSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,6 +85,16 @@
             this.tbUsername.Size = new System.Drawing.Size(186, 20);
             this.tbUsername.TabIndex = 3;
             // 
+            // bdSource
+            // 
+            this.bdSource.DataMember = "users";
+            this.bdSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // tbPassword
             // 
             this.tbPassword.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdSource, "password", true));
@@ -119,20 +130,10 @@
             this.buttonReset.Text = "Reset";
             this.buttonReset.UseVisualStyleBackColor = true;
             // 
-            // bdSource
-            // 
-            this.bdSource.DataMember = "users";
-            this.bdSource.DataSource = this.dataSet1;
-            // 
             // dsUser
             // 
             this.dsUser.DataSetName = "dsUser";
             this.dsUser.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // usersBindingSource
             // 
@@ -143,11 +144,22 @@
             // 
             this.usersTableAdapter.ClearBeforeFill = true;
             // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(444, 176);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.TabIndex = 8;
+            this.buttonDelete.Text = "Delete";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // UserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.tbVerifyPassword);
@@ -160,8 +172,8 @@
             this.Text = "User Form";
             this.Load += new System.EventHandler(this.UserForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bdSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usersBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -183,5 +195,6 @@
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource usersBindingSource;
         private DataSet1TableAdapters.usersTableAdapter usersTableAdapter;
+        private System.Windows.Forms.Button buttonDelete;
     }
 }

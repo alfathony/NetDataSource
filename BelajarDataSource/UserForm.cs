@@ -24,9 +24,11 @@ namespace BelajarDataSource
 
         private void UserForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'dataSet1.users' table. You can move, or remove it, as needed.
-            this.usersTableAdapter.Fill(this.dataSet1.users);
-
+            if (this.Tag != null)
+            {
+                this.usersTableAdapter.FillBy(this.dataSet1.users, Convert.ToInt32(this.Tag));
+                buttonDelete.Visible = true;
+            }
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -35,9 +37,21 @@ namespace BelajarDataSource
             {
                 if(tbPassword.Text == tbVerifyPassword.Text)
                 {
-                    this.usersTableAdapter.Insert(5, tbUsername.Text, tbPassword.Text);
-                    MessageBox.Show("Data has been saved");
-                    this.Close();
+                    if(this.Tag == null)
+                    {
+                        this.usersTableAdapter.Insert(5, tbUsername.Text, tbPassword.Text);
+                        MessageBox.Show("Data has been saved");
+                        this.Close();
+                    }
+                    else
+                    {
+                        Form userView = new Form1();
+                        this.usersTableAdapter.Update(tbUsername.Text, tbPassword.Text, Convert.ToInt32(this.Tag), Convert.ToInt32(this.Tag));
+                        userView.MdiParent = this.ParentForm;
+                        userView.Show();
+                        this.Close();
+                    }
+                    
                 }
                 else
                 {
@@ -51,6 +65,28 @@ namespace BelajarDataSource
                 MessageBox.Show(ex.Message);
 
             }
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            Form userView = new Form1();
+            try
+            {
+                DialogResult dialogResult = MessageBox.Show("Apakah akan dihapus?", "Confirmation", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    this.usersTableAdapter.Delete(Convert.ToInt32(this.Tag));
+                    userView.MdiParent = this.ParentForm;
+                    userView.Show();
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

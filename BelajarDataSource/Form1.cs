@@ -23,5 +23,17 @@ namespace BelajarDataSource
             this.usersTableAdapter.Fill(this.dataSet11.users);
 
         }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int rowIndex = e.RowIndex;
+            DataGridViewRow row = dataGridView1.Rows[rowIndex];
+
+            Form ParsingData = new UserForm();
+            ParsingData.Tag = row.Cells[0].Value.ToString();
+            ParsingData.MdiParent = this.ParentForm;
+            ParsingData.Show();
+            this.Close();
+        }
     }
 }
